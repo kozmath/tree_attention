@@ -1,0 +1,15 @@
+model:
+  d_model: 48
+  layers: 2
+  n_heads: 4
+training:
+  batch_size: 256
+  device: mps
+  learning_rate: 0.001
+  num_epochs: 50000
+  dropout: 0.05
+validation:
+  batch_size: 16
+func_composition:
+  n: 5
+  k: 3
