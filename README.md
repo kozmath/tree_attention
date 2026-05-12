@@ -1,6 +1,6 @@
 # Poly-Attention: A General Scheme for Higher-Order Self-Attention
 
-This repository contains the official implementation of **Poly-Attention**, a general framework for constructing higher-order self-attention mechanisms published at **ICLR**.
+This repository contains the official implementation of **Tree-Attention**, a complete class of quadratic time higher-order attention mechanisms defined in the paper **Poly-attention: a general framework for higher-order self-attention** published at **ICLR**.
 
 Standard self-attention computes a weighted combination of value vectors using a single pair of query and key matrices. Poly-attention replaces this with a *tree-structured* polynomial composition of multiple query and value matrices, recovering standard attention as a special case while enabling strictly more expressive attention patterns.
 
