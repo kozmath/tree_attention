@@ -11,7 +11,7 @@ import random
 import math
 from src.tree_general import MultiLayerTransformer
 from src.FC_random import function_composition
-
+from src.trained_model import save_model_weights, load_model_weights
 
 
 
@@ -52,7 +52,9 @@ vocab_in2 = k*n + 1
 seq_len = k*n+1
 
 
-model_poly = [{'t': 3, 'children_list': [[1], [2]]}, {'t': 3, 'children_list': [[1], [2]]}]
+# model_poly = [{'t': 3, 'children_list': [[1], [2]]}, {'t': 3, 'children_list': [[1], [2]]}]
+model_poly = [{'t': 3, 'children_list': [[1], [2]]}] * layers
+
 
 model = MultiLayerTransformer(
     model_poly=model_poly,
@@ -148,6 +150,10 @@ for i in range(epochs):
         # Periodic memory cleanup for MPS
         if i % 500 == 0:
             torch.cuda.empty_cache()
+
+
+#save the model to configs
+save_model_weights(model, f"../models/transformer_weights_k{k}n{n}L{layers}d{d_model}.pt")
 
 # string_suffix = "tree" if tree_used else "simple"
 # np.savez(f"../data/{n}train{k}_sum_embed_{string_suffix}_L{layers}.npz",

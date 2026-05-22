@@ -1,9 +1,9 @@
 model:
-  d_model: 48
-  layers: 2
+  d_model: 32
+  layers: 1
   n_heads: 4
 training:
-  batch_size: 256
+  batch_size: 64
   device: mps
   learning_rate: 0.001
   num_epochs: 50000
@@ -11,5 +11,5 @@ training:
 validation:
   batch_size: 16
 func_composition:
-  n: 5
-  k: 3
+  n: 25
+  k: 2
