@@ -3,7 +3,7 @@ import numpy as np
 from numpy import linalg
 import matplotlib.pyplot as plt
 
-weights = torch.load("transformer_weights_k2n25L1d50.pt", map_location="cpu")
+weights = torch.load("transformer_weights_k2n50L1d32.pt", map_location="cpu")
 #print(weights["model_state_dict"].keys())
 
 A = weights["model_state_dict"]["multi_layer_transformer.0.WQi.0.weight"]
